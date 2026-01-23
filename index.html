@@ -1,131 +1,180 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Index Technologies</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;700&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Index Technologies</title>
+<style>
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+  }
+  header {
+    text-align: center;
+    padding: 4rem 1rem 2rem;
+  }
+  header h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 3px;
+    font-weight: 900;
+  }
+  header h2 {
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    color: #bbb;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: transparent;
+    border: 2px solid #0af;
+    color: #0af;
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  nav button:hover,
+  nav button.active {
+    background: #0af;
+    color: #000;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+  }
+  section {
+    display: none;
+    animation: fadeIn 0.6s ease forwards;
+  }
+  section.active {
+    display: block;
+  }
+  section h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #0af;
+  }
+  section p {
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+  section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #0afaaaff;
+  }
+  footer {
+    background-color: #111;
+    text-align: center;
+    padding: 1rem 1rem 3rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  footer .address {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #ccc;
+  }
+  a.contact-link {
+    color: #0af;
+    text-decoration: none;
+  }
+  a.contact-link:hover {
+    text-decoration: underline;
+  }
 
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #00fff7;
-      font-family: 'Roboto', sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    header {
-      padding: 1.5rem 3rem;
-      text-align: center;
-      border-bottom: 1px solid #00fff7;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      font-size: 2.5rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      user-select: none;
-      text-shadow: 0 0 8px #00fff7;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      font-size: 3.5rem;
-      margin-bottom: 0.25em;
-      text-shadow: 0 0 15px #00fff7;
-    }
-
-    p.lead {
-      font-weight: 300;
-      font-size: 1.4rem;
-      line-height: 1.5;
-      margin-bottom: 2rem;
-      color: #a0f9ffcc;
-    }
-
-    .btn-primary {
-      background: #00fff7;
-      color: #002222;
-      font-weight: 700;
-      padding: 1rem 2.5rem;
-      border: none;
-      border-radius: 9999px;
-      cursor: pointer;
-      font-size: 1.2rem;
-      letter-spacing: 0.05em;
-      transition: background 0.3s ease;
-      box-shadow: 0 0 15px #00fff7aa;
-      text-transform: uppercase;
-    }
-    .btn-primary:hover {
-      background: #00ccc0;
-      box-shadow: 0 0 30px #00fff7ff;
-    }
-
-    footer {
-      padding: 1rem 3rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #00fff788;
-      font-family: 'Roboto', sans-serif;
-      user-select: none;
-      border-top: 1px solid #00fff7;
-    }
-
-    /* Glowing line animation */
-    .glow-line {
-      width: 100px;
-      height: 3px;
-      margin: 1rem auto 3rem;
-      background: linear-gradient(90deg, transparent, #00fff7, transparent);
-      animation: pulse 2s infinite;
-      border-radius: 9999px;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.4;
-        transform: scaleX(0.8);
-      }
-      50% {
-        opacity: 1;
-        transform: scaleX(1);
-      }
-    }
-
-  </style>
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
 </head>
 <body>
-  <header>INDEX TECHNOLOGIES</header>
 
-  <main>
-    <h1>Automatización & Integración</h1>
-    <div class="glow-line"></div>
-    <p class="lead">
-      Simplificamos tus procesos operativos con tecnología inteligente.<br />
-      Desde producción hasta ventas, construimos soluciones escalables y eficientes.
-    </p>
-    <button class="btn-primary" onclick="window.location.href='mailto:tobias@indextechnologies.de'">Contáctanos</button>
-  </main>
+<header>
+  <h1>Index<br>Technologies</h1>
+  <h2>Automations & Business Intelligence</h2>
+</header>
 
-  <footer>
-    © 2026 Index Technologies. Todos los derechos reservados.
-  </footer>
+<nav>
+  <button class="active" data-target="automation">Process Automation</button>
+  <button data-target="integration">Technology Integration</button>
+  <button data-target="ai-agents">AI Agents</button>
+  <button data-target="bi-analysis">Business Intelligence Analysis</button>
+</nav>
+
+<main>
+  <section id="automation" class="active">
+    <h3>Process Automation</h3>
+    <p>Streamline your operational workflows by automating repetitive tasks and optimizing production processes.</p>
+    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=60" alt="Automation concept">
+  </section>
+  <section id="integration">
+    <h3>Technology Integration</h3>
+    <p>Seamlessly connect your existing tools and platforms for a unified and efficient digital ecosystem.</p>
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=60" alt="Technology integration">
+  </section>
+  <section id="ai-agents">
+    <h3>AI Agents</h3>
+    <p>Leverage artificial intelligence to create smart agents that assist with decision-making and automate complex tasks.</p>
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=60" alt="AI concept">
+  </section>
+  <section id="bi-analysis">
+    <h3>Business Intelligence Analysis</h3>
+    <p>Gain deep insights from your data with advanced BI tools that turn raw data into strategic decisions.</p>
+    <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=800&q=60" alt="Business Intelligence">
+  </section>
+</main>
+
+<footer>
+  <div class="address">69123 Heidelberg, Deutschland</div>
+  <div>© 2026 Index Technologies. All rights reserved.</div>
+  <div>Contact: <a href="mailto:tobias@indextechnologies.de" class="contact-link">tobias@indextechnologies.de</a></div>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('nav button');
+  const sections = document.querySelectorAll('main section');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      buttons.forEach(b => b.classList.remove('active'));
+      // Add active to clicked button
+      btn.classList.add('active');
+
+      // Show the corresponding section
+      const target = btn.getAttribute('data-target');
+      sections.forEach(sec => {
+        if (sec.id === target) {
+          sec.classList.add('active');
+        } else {
+          sec.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
