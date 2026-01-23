@@ -5,37 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Index Technologies</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;700&display=swap');
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 50px auto;
+      margin: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #00fff7;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 1.5rem 3rem;
       text-align: center;
-      padding: 20px;
+      border-bottom: 1px solid #00fff7;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      user-select: none;
+      text-shadow: 0 0 8px #00fff7;
     }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
     h1 {
-      color: #2c3e50;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin-bottom: 0.25em;
+      text-shadow: 0 0 15px #00fff7;
     }
-    p {
-      color: #34495e;
-      font-size: 18px;
+
+    p.lead {
+      font-weight: 300;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      color: #a0f9ffcc;
     }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
+
+    .btn-primary {
+      background: #00fff7;
+      color: #002222;
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      letter-spacing: 0.05em;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 15px #00fff7aa;
+      text-transform: uppercase;
     }
-    a:hover {
-      background: #0056b3;
+    .btn-primary:hover {
+      background: #00ccc0;
+      box-shadow: 0 0 30px #00fff7ff;
     }
+
+    footer {
+      padding: 1rem 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #00fff788;
+      font-family: 'Roboto', sans-serif;
+      user-select: none;
+      border-top: 1px solid #00fff7;
+    }
+
+    /* Glowing line animation */
+    .glow-line {
+      width: 100px;
+      height: 3px;
+      margin: 1rem auto 3rem;
+      background: linear-gradient(90deg, transparent, #00fff7, transparent);
+      animation: pulse 2s infinite;
+      border-radius: 9999px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.4;
+        transform: scaleX(0.8);
+      }
+      50% {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+
   </style>
 </head>
 <body>
-  <h1>Index Technologies</h1>
-  <p>Automatización, integración y sistemas de datos para pequeñas y medianas empresas.</p>
-  <a href="mailto:tobias@indextechnologies.de">Contactar</a>
+  <header>INDEX TECHNOLOGIES</header>
+
+  <main>
+    <h1>Automatización & Integración</h1>
+    <div class="glow-line"></div>
+    <p class="lead">
+      Simplificamos tus procesos operativos con tecnología inteligente.<br />
+      Desde producción hasta ventas, construimos soluciones escalables y eficientes.
+    </p>
+    <button class="btn-primary" onclick="window.location.href='mailto:tobias@indextechnologies.de'">Contáctanos</button>
+  </main>
+
+  <footer>
+    © 2026 Index Technologies. Todos los derechos reservados.
+  </footer>
 </body>
 </html>
