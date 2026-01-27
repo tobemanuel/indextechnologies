@@ -1,87 +1,155 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="de">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Index Technologies: Automations & BI templates para microempresas 1-50 empleados. Plataforma Horizons, Rhein-Neckar Paraguay, GDPR compliant." />
-  <meta name="keywords" content="automation, BI, microempresas, workflows, QC, facturación, Horizons, Rhein-Neckar, Paraguay" />
-  
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./Images/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./Images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./Images/favicon-16x16.png" />
-  <link rel="manifest" href="./Images/site.webmanifest" />
-  
-  <!-- Bootstrap CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Technologies | Business Intelligence & Automatisierung für KMU</title>
+  <meta name="description" content="Effiziente BI-Lösungen und Automatisierungen für KMU in Rhein-Neckar und Paraguay. Templates, Dashboards, Integrationen – ohne eigene IT-Abteilung.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
-  <!-- App CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <title>Index Technologies | Automations BI Microempresas DE-PY</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; }
+    .hero { background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%); color: white; }
+    .btn-contact { background: #28a745; color: white; }
+    .btn-contact:hover { background: #218838; }
+  </style>
 </head>
 <body>
-  <div class="app">
-    <!-- Navbar -->
-    <nav id="Navbar" class="navbar navbar-expand-lg navbar-light bg-transparent"></nav>
-    
-    <!-- Sections -->
-    <div id="Herosection" class="position-relative"></div>
-    <div id="LogoCloud1" class="Logo-cloud py-5"></div>
-    <div id="Features" class="features-section py-5"></div>
-    <section id="Testimonial" class="testimonial-section bg-light py-5"></section>
-    <div id="Metric" class="section py-5"></div>
-    <div id="LogoCloud2" class="section py-5"></div>
-    <!-- Careers eliminado -->
-    <div id="Pricing" class="bg-light py-5"></div>
-    <div id="FAQ" class="py-5"></div>
-    <div id="CTA" class="bg-primary text-white py-5"></div>
-    <div id="Footer" class="bg-dark text-white py-5"></div>
-    
-    <!-- Arrow to Top -->
-    <a href="#" id="ArrowToTop" class="arrow-back-to rounded-circle d-none align-items-center justify-content-center position-fixed bottom-0 end-0 m-4 btn btn-primary">
-      <i class="bi bi-arrow-up"></i>
-    </a>
-  </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#home">
+        <i class="bi bi-gear-fill me-2"></i>Index Technologies
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#services">Leistungen</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bi">Business Intelligence</a></li>
+          <li class="nav-item"><a class="nav-link" href="#automations">Automatisierungen</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ueber-uns">Über Uns</a></li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light ms-2 px-4" href="mailto:hello@indextechnologies.de">Kontakt</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero min-vh-100 d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-3 fw-bold mb-4">Business Intelligence & Automatisierung<br>für <span class="text-warning">KMU</span></h1>
+          <p class="lead fs-4 mb-4">Vorlagen für BI-Analysen und Prozessautomatisierung – in Minuten bereit, ohne eigene IT-Abteilung.</p>
+          <div class="d-flex gap-3">
+            <a href="#services" class="btn btn-warning btn-lg px-5">Mehr erfahren</a>
+            <a href="mailto:hello@indextechnologies.de" class="btn btn-outline-light btn-lg px-5">Kontakt</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="images/dashboard-mockup.png" alt="Dashboard BI" class="img-fluid rounded shadow-lg" style="max-height: 500px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Unsere Leistungen</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow">
+            <div class="card-body text-center">
+              <i class="bi bi-bar-chart display-1 text-primary mb-3"></i>
+              <h4>Business Intelligence</h4>
+              <p>Analysieren Sie Ihre KPIs, Umsätze und Prozessdaten in Echtzeit. Erstellen Sie individuelle Dashboards mit Vorhersagen und Berichten.</p>
+              <a href="#bi" class="btn btn-outline-primary">Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow">
+            <div class="card-body text-center">
+              <i class="bi bi-gear display-1 text-primary mb-3"></i>
+              <h4>Automatisierungen</h4>
+              <p>Automatisieren Sie wiederkehrende Prozesse wie Rechnungsstellung, CRM-Synchronisation, Dokumentation und Compliance – mit Integrationen und APIs.</p>
+              <a href="#automations" class="btn btn-outline-primary">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Intelligence -->
+  <section id="bi" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Business Intelligence</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h4>Was wir bieten</h4>
+          <ul>
+            <li>Echtzeit-Dashboards für KPIs, Umsätze, Prozesse</li>
+            <li>Predictive Analytics für Prognosen und Optimierung</li>
+            <li>Integrationen mit gängigen Tools (CRM, ERP, Excel)</li>
+            <li>Individuelle Berichte und Exporte</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <img src="images/bi-mockup.png" alt="BI Dashboard" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Automatisierungen -->
+  <section id="automations" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Automatisierungen</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <img src="images/automation-mockup.png" alt="Automatisierung" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+          <h4>Was wir bieten</h4>
+          <ul>
+            <li>Automatisierte Workflows (Rechnungen, CRM, Dokumentation)</li>
+            <li>Integrationen mit APIs und Tools wie Jotform, n8n, Zapier</li>
+            <li>Compliance-Checks und Qualitätskontrolle</li>
+            <li>Benutzerfreundliche Oberfläche ohne Programmierkenntnisse</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über Uns -->
+  <section id="ueber-uns" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Über Uns</h2>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Index Technologies ist eine Dienstleistungsagentur, spezialisiert auf Automatisierungen und Business Intelligence (BI) für kleine und mittlere Unternehmen (KMU). Gegründet von Tobias Emanuel, einem SRH Heidelberg Austauschstudent aus Paraguay mit Erfahrung in einem deutschen Startup, verbindet das Unternehmen digitale Transformation für KMU in der Rhein-Neckar Region und Paraguay.</p>
+          <p>Wir liefern maßgeschneiderte Workflows, Echtzeit-Dashboards und cross-border Optimierungen – ohne dass Kunden komplexe IT-Infrastruktur aufbauen oder warten müssen. Unsere Mission ist es, KMU zu befähigen, wiederkehrende Aufgaben zu automatisieren und datenbasierte Entscheidungen zu treffen, ohne eigene IT-Teams zu benötigen.</p>
+          <p>Unsere Vision ist es, die führende zweisprachige Agentur für den deutsch-paraguayischen Handel und die Digitalisierung zu werden – durch projektbasierte Dienstleistungen und Retainer-Modelle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <p>&copy; 2026 Index Technologies GmbH | <a href="mailto:hello@indextechnologies.de" class="text-white">Kontakt</a></p>
+    </div>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Components (usa TODOS los scripts adaptados que te di) -->
-  <script>/* Navbar adaptado */</script>
-  <script>/* Herosection adaptado */</script>
-  <script>/* LogoCloud adaptado */</script>
-  <script>/* Features adaptado */</script>
-  <script>/* Testimonial adaptado */</script>
-  <script>/* Metrics adaptado */</script>
-  <!-- <script src="./components/Career.js"></script> Eliminado -->
-  <script>/* CTA adaptado */</script>
-  <script>/* Pricing adaptado */</script>
-  <script>/* FAQ adaptado */</script>
-  <script>/* Footer adaptado */</script>
-  
-  <!-- Scroll Effects -->
-  <script>
-    const navbar = document.getElementById("Navbar");
-    const ArrowToTop = document.getElementById("ArrowToTop");
-    window.onscroll = function () {
-      if (document.body.scrollTop >= 800 || document.documentElement.scrollTop >= 800) {
-        ArrowToTop.classList.remove("d-none");
-        ArrowToTop.classList.add("d-flex");
-      } else {
-        ArrowToTop.classList.add("d-none");
-        ArrowToTop.classList.remove("d-flex");
-      }
-      if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10) {
-        navbar.classList.add("bg-white", "shadow-sm");
-        navbar.classList.remove("bg-transparent");
-      } else {
-        navbar.classList.add("bg-transparent");
-        navbar.classList.remove("bg-white", "shadow-sm");
-      }
-    };
-    ArrowToTop.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
-  </script>
 </body>
 </html>
