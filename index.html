@@ -12,92 +12,232 @@
   <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- ESTILOS ORIGINALES – NO TOCADOS -->
+  <!-- Main Styles (optional: move to css/style.css) -->
   <style>
-    /* TODO TU CSS ORIGINAL TAL CUAL */
+    /* Aquí va tu CSS original completo, sin cambios */
+    /* ... tu CSS completo aquí ... */
   </style>
 </head>
-
 <body>
-
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold fs-4" href="index.html">
-      <img src="https://tobemanuel.github.io/indextechnologies/images/logo-indextech-white.png" alt="Index Technologies" />
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item">
-          <a class="nav-link" href="rhein-neckar.html">Rhein-Neckar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="paraguay.html">Paraguay</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="bi.html">Business Intelligence</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="automations.html">Automatisierung</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#ueber-uns">Über Uns</a>
-        </li>
-        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-          <a class="btn btn-primary-custom" href="#contact">Kontakt</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <h1 class="mb-4">
-          Business Intelligence &amp; Automatisierung<br />
-          für <span class="text-success">KMU</span>
-        </h1>
-        <p class="lead mb-4">
-          Intelligent automatisieren, nachhaltig wachsen. Wir verbinden BI und Automatisierung, damit Sie wieder Zeit für das Wesentliche haben.
-        </p>
-        <div class="d-flex gap-3 flex-wrap">
-          <a href="bi.html" class="btn btn-primary-custom px-5">Business Intelligence</a>
-          <a href="automations.html" class="btn btn-outline-custom px-5">Automatisierung</a>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="index.html">
+        <img src="https://tobemanuel.github.io/indextechnologies/images/logo-indextech-white.png" alt="Index Technologies" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="rhein-neckar.html">Rhein-Neckar</a></li>
+          <li class="nav-item"><a class="nav-link" href="paraguay.html">Paraguay</a></li>
+          <li class="nav-item"><a class="nav-link" href="bi.html">Business Intelligence</a></li>
+          <li class="nav-item"><a class="nav-link" href="automations.html">Automatisierung</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ueber-uns">Über Uns</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-primary-custom" href="#contact">Kontakt</a>
+          </li>
+        </ul>
       </div>
+    </div>
+  </nav>
 
-      <div class="col-lg-6 text-center">
-        <!-- MOCKUP REEMPLAZANDO PLACEHOLDER -->
-        <div class="p-5 bg-dark rounded shadow mx-auto" style="max-width:450px;">
-          <i class="bi bi-graph-up display-1 text-success mb-3"></i>
-          <h3 class="mb-2">BI + Automatisierung</h3>
-          <p class="text-muted mb-0">Live Dashboards</p>
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h1 class="mb-4">
+            Business Intelligence &amp; Automatisierung<br />
+            für <span class="text-success">KMU</span>
+          </h1>
+          <p class="lead mb-4">
+            Intelligent automatisieren, nachhaltig wachsen. Wir verbinden BI und Automatisierung, damit Sie wieder Zeit für das Wesentliche haben.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="bi.html" class="btn btn-primary-custom px-5">Mehr erfahren</a>
+            <a href="#contact" class="btn btn-outline-custom px-5">Kontakt</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <!-- Aquí reemplazamos el placeholder por el mockup solicitado -->
+          <div class="p-5 bg-dark rounded shadow mx-auto" style="max-width: 450px;">
+            <i class="bi bi-graph-up display-1 text-success mb-3"></i>
+            <h3 class="mb-2">BI + Automatisierung</h3>
+            <p class="text-muted mb-0">Live Dashboards</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- RESTO DE SECCIONES: REGION, PARAGUAY, SERVICES, VORTEILE, ÜBER UNS, CONTACT -->
-<!-- NO SE TOCAN, SOLO SE ELIMINAN LOS SVGs -->
+  <!-- Rhein-Neckar -->
+  <section id="region">
+    <div class="container">
+      <h2 class="section-title">Entwicklung Rhein-Neckar Region</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center">
+          <p class="lead">
+            Basierend in Heidelberg, gestalten wir die digitale Zukunft von KMU in der Rhein-Neckar Region. Von Mannheim und Karlsruhe bis zu den kleinen Städten rundherum – wir bringen deutsche Digitalisierungsexpertise direkt zu Ihren Prozessen. Gemeinsam machen wir Ihre Arbeit effizienter, transparenter und zukunftssicher.
+          </p>
+          <div class="mt-4">
+            <i class="bi bi-rocket vorteil-icon"></i>
+            <p class="lead">Digitalisierung mit lokaler Präsenz</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- IMPORTANTE: BORRAR SOLO ESTAS IMÁGENES EN SERVICES -->
-<!--
-<img src=".../powerbi.svg">
-<img src=".../tableau.svg">
-<img src=".../google-analytics.svg">
-<img src=".../zapier.svg">
-<img src=".../api.svg">
-<img src=".../n8n.svg">
--->
+  <!-- Paraguay -->
+  <section id="paraguay">
+    <div class="container">
+      <h2 class="section-title">Unterstützung Paraguay Markt</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center">
+          <p class="lead">
+            Durch unsere internationale Verbindung bringen wir deutsche Digitalisierungslösungen nach Paraguay. KMU erhalten Zugang zu modernsten Technologien und Prozessen – und können so den Sprung in den südamerikanischen Markt schaffen. Wir verbinden zwei Welten für mehr Wettbewerbsvorteil.
+          </p>
+          <div class="mt-4">
+            <i class="bi bi-globe vorteil-icon"></i>
+            <p class="lead">Internationale Expertise, lokale Anpassung</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title mb-5">Unsere Leistungen</h2>
+      <div class="accordion" id="servicesAccordion">
+        <!-- BI -->
+        <div class="accordion-item mb-3">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#biContent">
+              <i class="bi bi-bar-chart icon me-3"></i> Business Intelligence
+            </button>
+          </h2>
+          <div id="biContent" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+            <div class="accordion-body">
+              <h4>Business Intelligence: Echtzeit-Analysen für Ihr Unternehmen</h4>
+              <p>Optimieren Sie Ihre Entscheidungsprozesse mit maßgeschneiderten Dashboards und Analysen.</p>
+              <ul>
+                <li>Erstellen Sie Echtzeit-Dashboards für KPIs, Umsätze und Prozessdaten.</li>
+                <li>Nutzen Sie Predictive Analytics zur Prognose von Trends und Optimierung.</li>
+                <li>Integrieren Sie Daten aus CRM, ERP, Excel und Google Sheets.</li>
+                <li>Generieren Sie individuelle Berichte und Exporte für Compliance-Checks.</li>
+                <li>Benutzerfreundliche Oberfläche – ohne Programmierkenntnisse.</li>
+              </ul>
+              <div class="logos d-flex justify-content-center mt-4 flex-wrap">
+                <!-- Aquí eliminamos todas las imágenes SVG salvo el logo del navbar-brand -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Automatisierung -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#automationContent">
+              <i class="bi bi-gear icon me-3"></i> Automatisierung
+            </button>
+          </h2>
+          <div id="automationContent" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+            <div class="accordion-body">
+              <h4>Automatisierung: Verbinden Sie Ihre Tools</h4>
+              <p>Nahtlose Integrationen mit den gängigsten Tools und APIs.</p>
+              <ul>
+                <li>Automatisierte Workflows für Rechnungsstellung, CRM-Synchronisation und Dokumentation.</li>
+                <li>Integrationen mit Tools wie Jotform, n8n, Zapier und Supabase.</li>
+                <li>Compliance-Checks und Qualitätskontrolle (QC) direkt in Ihren Prozessen.</li>
+                <li>Benutzerfreundliche Oberfläche – ohne Programmierkenntnisse.</li>
+                <li>Benutzer- und Rollenverwaltung für Teams.</li>
+              </ul>
+              <div class="logos d-flex justify-content-center mt-4 flex-wrap">
+                <!-- Aquí eliminamos todas las imágenes SVG salvo el logo del navbar-brand -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vorteile -->
+  <section id="vorteile">
+    <div class="container">
+      <h2 class="section-title">Vorteile</h2>
+      <div class="row text-center g-4 mt-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <i class="bi bi-clock vorteil-icon"></i>
+            <h4>Schnelle Umsetzung</h4>
+            <p>Prozessstandards in wenigen Stunden – kein langer Einarbeitungsprozess.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <i class="bi bi-puzzle vorteil-icon"></i>
+            <h4>Individuelle Anpassung</h4>
+            <p>Passen Sie Ihre Prozesse einfach und flexibel an Ihre Bedürfnisse an.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <i class="bi bi-graph-up vorteil-icon"></i>
+            <h4>Maßgeschneiderte Analysen</h4>
+            <p>Personalisierte BI-Analysen für Ihre spezifischen Anforderungen.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100">
+            <i class="bi bi-link vorteil-icon"></i>
+            <h4>Nahtlose Integration</h4>
+            <p>Verbinden Sie Ihre Tools – von CRM bis ERP und Excel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über Uns -->
+  <section id="ueber-uns">
+    <div class="container">
+      <h2 class="section-title mb-5">Über Uns</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <p>
+            Wir sind eine Agentur mit Erfahrung in Automatisierungen und Business Intelligence, die auf die Bedürfnisse von KMU spezialisiert ist. Wir suchen nach Partnern und Kunden, die gemeinsam mit uns ihre Prozesse digitalisieren und optimieren möchten. Unser Ziel ist es, KMU in der Rhein-Neckar Region und Paraguay zu unterstützen, damit sie wiederkehrende Aufgaben automatisieren und datenbasierte Entscheidungen treffen können – ohne eigene IT-Teams.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title mb-5">Kontakt</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <p class="lead mb-4">
+            Möchten Sie mehr erfahren oder haben Sie Fragen? Schreiben Sie uns – wir melden uns innerhalb von 24 Stunden.
+          </p>
+          <a href="mailto:tobias@indextechnologies.de" class="btn btn-primary-custom btn-lg px-5">Kontakt aufnehmen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white">
+    <div class="container text-center">
+      <p>&copy; 2026 Index Technologies | <a href="mailto:tobias@indextechnologies.de">Kontakt</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
