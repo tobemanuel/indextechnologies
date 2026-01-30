@@ -12,153 +12,249 @@
   <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
+  <!-- Main Styles (optional: move to css/style.css) -->
   <style>
-    /* (ESTILOS SIN CAMBIOS) */
+    :root {
+      --primary-50: #f5f3ff;
+      --primary-100: #ede9fe;
+      --primary-300: #c4b5fd;
+      --primary-600: #28a745;
+      --primary-900: #218838;
+      --secondary-50: #ecfeff;
+      --secondary-100: #d5fafc;
+      --secondary-300: #75e3ea;
+      --secondary-600: #1db5be;
+      --secondary-900: #2a4e51;
+      --neutral-50: #f9fafb;
+      --neutral-100: #f3f4f6;
+      --neutral-200: #e5e7eb;
+      --neutral-300: #d1d5db;
+      --neutral-400: #9ca3af;
+      --neutral-500: #6b7280;
+      --neutral-600: #4b5563;
+      --neutral-700: #374151;
+      --neutral-800: #1f2937;
+      --neutral-900: #111827;
+      --white: #ffffff;
+      --black: #000000;
+
+      --fs-displayXL: clamp(36px, 5vw, 60px);
+      --fs-displayLG: clamp(28px, 4vw, 48px);
+      --fs-displayMD: clamp(24px, 3.5vw, 36px);
+      --fs-displaySM: clamp(20px, 3vw, 30px);
+      --fs-bodyLG: clamp(16px, 2.5vw, 18px);
+      --fs-bodyMD: clamp(14px, 2vw, 16px);
+      --fs-bodySM: clamp(13px, 1.8vw, 14px);
+
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2.5rem;
+      --spacing-xl: 4rem;
+
+      --border-radius: 12px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background: var(--neutral-900);
+      color: var(--white);
+    }
+
+    h1 {
+      font-size: var(--fs-displayXL);
+      line-height: 1.1;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: var(--fs-displayLG);
+      line-height: 1.2;
+      font-weight: 600;
+    }
+    h3 {
+      font-size: var(--fs-displayMD);
+      line-height: 1.3;
+      font-weight: 600;
+    }
+    h4 {
+      font-size: var(--fs-displaySM);
+      line-height: 1.3;
+      font-weight: 600;
+    }
+    p {
+      font-size: var(--fs-bodyMD);
+      line-height: 1.7;
+      color: var(--neutral-300);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(17, 24, 39, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: var(--spacing-sm);
+      padding-bottom: var(--spacing-sm);
+    }
+    .navbar-brand img {
+      height: 42px;
+      transition: transform 0.3s ease;
+    }
+    .navbar-brand:hover img {
+      transform: scale(1.05);
+    }
+    .nav-link {
+      font-weight: 500;
+      color: var(--neutral-200) !important;
+      padding: var(--spacing-xs) var(--spacing-md) !important;
+      margin: 0 var(--spacing-xs);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-600) !important;
+      background: rgba(40, 167, 69, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(
+        135deg,
+        var(--neutral-900) 0%,
+        var(--neutral-800) 100%
+      );
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 30% 20%,
+        rgba(40, 167, 69, 0.15) 0%,
+        transparent 50%
+      );
+      z-index: 1;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-900));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: var(--spacing-lg);
+    }
+    .hero p.lead {
+      font-size: var(--fs-bodyLG);
+      color: var(--neutral-200);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    /* Buttons */
+    .btn {
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: var(--fs-bodyMD);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary-custom {
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-900));
+      color: #fff;
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      background: linear-gradient(135deg, var(--primary-900), var(--primary-600));
+    }
+    .btn-outline-custom {
+      background: transparent;
+      color: var(--primary-600);
+      border: 2px solid var(--primary-600);
+    }
+    .btn-outline-custom:hover {
+      background: var(--primary-600);
+      color: #fff;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold fs-4" href="#home">
-      <img src="https://tobemanuel.github.io/indextechnologies/images/logo-indextech-white.png" alt="Index Technologies" />
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="rhein-neckar.html">Rhein-Neckar</a></li>
-        <li class="nav-item"><a class="nav-link" href="paraguay.html">Paraguay</a></li>
-        <li class="nav-item"><a class="nav-link" href="bi.html">Business Intelligence</a></li>
-        <li class="nav-item"><a class="nav-link" href="automations.html">Automatisierung</a></li>
-        <li class="nav-item"><a class="nav-link" href="#ueber-uns">Über Uns</a></li>
-        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-          <a class="btn btn-primary-custom" href="#contact">Kontakt</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section id="home" class="hero">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <h1 class="mb-4">
-          Business Intelligence &amp; Automatisierung<br />
-          für <span class="text-success">KMU</span>
-        </h1>
-        <p class="lead mb-4">
-          Intelligent automatisieren, nachhaltig wachsen. Wir verbinden BI und Automatisierung, damit Sie wieder Zeit für das Wesentliche haben.
-        </p>
-        <div class="d-flex gap-3 flex-wrap">
-          <a href="bi.html" class="btn btn-primary-custom px-5">Mehr erfahren</a>
-          <a href="#contact" class="btn btn-outline-custom px-5">Kontakt</a>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#home">
+        <img src="https://tobemanuel.github.io/indextechnologies/images/logo-indextech-white.png" alt="Index Technologies" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#region">Rhein-Neckar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#paraguay">Paraguay</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Leistungen</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vorteile">Vorteile</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ueber-uns">Über Uns</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-primary-custom" href="#contact">Kontakt</a>
+          </li>
+        </ul>
       </div>
-      <div class="col-lg-6 text-center">
-        <div class="p-5 bg-dark rounded shadow mx-auto" style="max-width:450px;">
-          <i class="bi bi-graph-up display-1 text-success mb-3"></i>
-          <h3 class="mb-2">BI + Automatisierung</h3>
-          <p class="text-muted mb-0">Live Dashboards</p>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h1 class="mb-4">
+            Business Intelligence &amp; Automatisierung<br />
+            für <span class="text-success">KMU</span>
+          </h1>
+          <p class="lead mb-4">
+            Intelligent automatisieren, nachhaltig wachsen.
+          </p>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://via.placeholder.com/520x360/111827/28a745?text=Index+Technologies" alt="Index Technologies" class="img-fluid rounded shadow" />
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Rhein-Neckar -->
-<section id="region">
-  <div class="container">
-    <h2 class="section-title">Entwicklung Rhein-Neckar Region</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-10 text-center">
-        <p class="lead">
-          Basierend in Heidelberg, gestalten wir die digitale Zukunft von KMU in der Rhein-Neckar Region.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Paraguay -->
-<section id="paraguay">
-  <div class="container">
-    <h2 class="section-title">Unterstützung Paraguay Markt</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-10 text-center">
-        <p class="lead">
-          Wir verbinden deutsche Digitalisierungslösungen mit dem paraguayischen Markt.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Services -->
-<section id="services">
-  <div class="container">
-    <h2 class="section-title mb-5">Unsere Leistungen</h2>
-    <div class="accordion" id="servicesAccordion">
-
-      <div class="accordion-item mb-3">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#biContent">
-            <i class="bi bi-bar-chart me-3"></i> Business Intelligence
-          </button>
-        </h2>
-        <div id="biContent" class="accordion-collapse collapse">
-          <div class="accordion-body">
-            <p>Maßgeschneiderte Dashboards und Analysen in Echtzeit.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#automationContent">
-            <i class="bi bi-gear me-3"></i> Automatisierung
-          </button>
-        </h2>
-        <div id="automationContent" class="accordion-collapse collapse">
-          <div class="accordion-body">
-            <p>Nahtlose Prozessautomatisierung und API-Integrationen.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Über Uns -->
-<section id="ueber-uns">
-  <div class="container">
-    <h2 class="section-title mb-5">Über Uns</h2>
-    <p>
-      Wir helfen KMU, Prozesse zu automatisieren und datenbasierte Entscheidungen zu treffen.
-    </p>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="container text-center">
-    <h2 class="section-title mb-5">Kontakt</h2>
-    <a href="mailto:tobias@indextechnologies.de" class="btn btn-primary-custom btn-lg px-5">
-      Kontakt aufnehmen
-    </a>
-  </div>
-</section>
-
-<footer class="text-white text-center py-4">
-  <p>&copy; 2026 Index Technologies</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
