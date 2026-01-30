@@ -1,1 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatisierung | Index Technologies</title>
 
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* MISMO CSS DEL INDEX - COPIAR COMPLETO */
+    :root {
+      --primary-50: #f5f3ff;
+      --primary-100: #ede9fe;
+      --primary-300: #c4b5fd;
+      --primary-600: #28a745;
+      --primary-900: #218838;
+      --secondary-50: #ecfeff;
+      --secondary-100: #d5fafc;
+      --secondary-300: #75e3ea;
+      --secondary-600: #1db5be;
+      --secondary-900: #2a4e51;
+      --neutral-50: #f9fafb;
+      --neutral-100: #f3f4f6;
+      --neutral-200: #e5e7eb;
+      --neutral-300: #d1d5db;
+      --neutral-400: #9ca3af;
+      --neutral-500: #6b7280;
+      --neutral-600: #4b5563;
+      --neutral-700: #374151;
+      --neutral-800: #1f2937;
+      --neutral-900: #111827;
+      --white: #ffffff;
+      --black: #000000;
+
+      --fs-displayXL: clamp(36px, 5vw, 60px);
+      --fs-displayLG: clamp(28px, 4vw, 48px);
+      --fs-displayMD: clamp(24px, 3.5vw, 36px);
+      --fs-displaySM: clamp(20px, 3vw, 30px);
+      --fs-bodyLG: clamp(16px, 2.5vw, 18px);
+      --fs-bodyMD: clamp(14px, 2vw, 16px);
+      --fs-bodySM: clamp(13px, 1.8vw, 14px);
+
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2.5rem;
+      --spacing-xl: 4rem;
+
+      --border-radius: 12px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6; overflow-x: hidden;
+      background: var(--neutral-900);
+      color: var(--white);
+    }
+
+    h1 { font-size: var(--fs-displayXL); line-height: 1.1; font-weight: 700; }
+    h2 { font-size: var(--fs-displayLG); line-height: 1.2; font-weight: 600; }
+    h3 { font-size: var(--fs-displayMD); line-height: 1.3; font-weight: 600; }
+    h4 { font-size: var(--fs-displaySM); line-height: 1.3; font-weight: 600; }
+    p { font-size: var(--fs-bodyMD); line-height: 1.7; color: var(--neutral-300); }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(17, 24, 39, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: var(--spacing-sm) 0;
+    }
+    .navbar-brand img { height: 42px; transition: transform 0.3s ease; }
+    .navbar-brand:hover img { transform: scale(1.05); }
+    .nav-link {
+      font-weight: 500; color: var(--neutral-200) !important;
+      padding: var(--spacing-xs) var(--spacing-md) !important;
+      margin: 0 var(--spacing-xs); border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary-600) !important;
+      background: rgba(40, 167, 69, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* HERO AUTOMATIONS */
+    .hero-automation {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--neutral-900) 0%, var(--neutral-800) 100%);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: 5rem;
+    }
+    .hero-automation::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(circle at 70% 20%, rgba(40,167,69,0.15) 0%, transparent 50%);
+      z-index: 1;
+    }
+    .hero-automation .container { position: relative; z-index: 2; }
+
+    .btn {
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: var(--border-radius);
+      font-weight: 600; font-size: var(--fs-bodyMD);
+      border: none; cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none; display: inline-flex;
+      align-items: center; gap: 0.5rem;
+    }
+    .btn-primary-custom {
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-900));
+      color: #fff; box-shadow: var(--shadow-sm);
+    }
+    .btn-primary-custom:hover {
+      transform: translateY(-2px); box-shadow: var(--shadow-md);
+      background: linear-gradient(135deg, var(--primary-900), var(--primary-600));
+    }
+    .btn-outline-custom {
+      background: transparent; color: var(--primary-600);
+      border: 2px solid var(--primary-600);
+    }
+    .btn-outline-custom:hover {
+      background: var(--primary-600); color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .section-title {
+      font-size: var(--fs-displayLG); font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-900));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: var(--spacing-lg); text-align: center;
+      position: relative;
+    }
+    .section-title::after {
+      content: ""; position: absolute; bottom: -10px; left: 50%;
+      transform: translateX(-50%); width: 60px; height: 4px;
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-900));
+      border-radius: 2px;
+    }
+
+    section { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); background: var(--neutral-900); }
+
+    .workflow-card {
+      background: linear-gradient(145deg, var(--neutral-800), var(--neutral-900));
+      border: 1px solid rgba(40, 167, 69, 0.2);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-xl);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .workflow-card::before {
+      content: ""; position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%; background: var(--primary-600);
+    }
+    .workflow-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: var(--primary-600);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .icon-large { 
+      font-size: clamp(3rem, 8vw, 4rem);
+      background: linear-gradient(135deg, var(--primary-600), var(--primary-900));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: var(--spacing-md);
+    }
+
+    .features-grid { background: var(--neutral-800); border-radius: var(--border-radius); padding: var(--spacing-xl); }
+    .feature-item {
+      padding: var(--spacing-lg); border-left: 4px solid var(--primary-600);
+      transition: all 0.3s ease;
+    }
+    .feature-item:hover { background: rgba(40,167,69,0.05); transform: translateX(8px); }
+
+    footer {
+      background: var(--neutral-900);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: var(--spacing-lg) 0;
+    }
+    footer a { color: var(--primary-600); font-weight: 500; }
+    footer a:hover { color: var(--primary-900); text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .hero-automation { text-align: center; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR - SHARED -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="index.html">
+        <img src="https://tobemanuel.github.io/indextechnologies/images/logo-indextech-white.png" alt="Index Technologies" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html#region">Rhein-Neckar</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#paraguay">Paraguay</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="bi.html">Business Intelligence</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Automatisierung</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-primary-custom px-4" href="#contact">Demo anfragen</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-automation">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h1 class="mb-4">
+            Automatisierung<br />
+            <span class="text-success">ohne Programmierer</span>
+          </h1>
+          <p class="lead mb-4">
+            Rechnungen, CRM, Onboarding → 1-Klick Workflows. Sparen Sie 80% der Routinearbeit in Stunden, nicht Monaten.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#workflows" class="btn btn-primary-custom px-5">Workflows sehen</a>
+            <a href="#contact" class="btn btn-outline-custom px-5">Kostenlose Demo</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="workflow-card p-5 mx-auto" style="max-width: 450px;">
+            <i class="bi bi-arrow-repeat icon-large"></i>
+            <h3>3 Sekunden Workflow</h3>
+            <p>Kunde → Angebot → Rechnung → DATEV</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOWS -->
+  <section id="workflows">
+    <div class="container">
+      <h2 class="section-title mb-5">Ihre Automatisierungen</h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="workflow-card">
+            <i class="bi bi-receipt icon-large"></i>
+            <h4>🧾 Rechnungsstellung</h4>
+            <p class="mb-3">Kunde → Angebot → Rechnung → DATEV <strong>(3s)</strong></p>
+            <ul class="mb-0">
+              <li>Automatische Rechnungsstellung</li>
+              <li>Direkte DATEV-Synchronisation</li>
+              <li>Compliance-Checks integriert</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="workflow-card">
+            <i class="bi bi-people icon-large"></i>
+            <h4>👥 Mitarbeiter Onboarding</h4>
+            <p class="mb-3">Neuer Mitarbeiter → Vertrag → E-Mail → Zugriff <strong>(1min)</strong></p>
+            <ul class="mb-0">
+              <li>Verträge automatisch generieren</li>
+              <li>Zugriffsrechte verteilen</li>
+              <li>Willkommens-E-Mails</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="workflow-card">
+            <i class="bi bi-phone icon-large"></i>
+            <h4>📞 Lead zu Kunde</h4>
+            <p class="mb-3">Lead → Angebot → Vertrag → Projektstart <strong>(2min)</strong></p>
+            <ul class="mb-0">
+              <li>Automatische Lead-Bearbeitung</li>
+              <li>Angebote personalisiert</li>
+              <li>Verträge digital signieren</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section class="features-grid">
+    <div class="container">
+      <h2 class="section-title mb-5">Alles integriert</h2>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-item text-center text-md-start">
+            <i class="bi bi-plug display-4 text-success mb-3 d-block"></i>
+            <h5>100+ Integrationen</h5>
+            <p>Jotform, Zapier, n8n, DATEV, Supabase, M365</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-item text-center text-md-start">
+            <i class="bi bi-shield-check display-4 text-success mb-3 d-block"></i>
+            <h5>Compliance-ready</h5>
+            <p>DSGVO, GoBD, DATEV-konform</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-item text-center text-md-start">
+            <i class="bi bi-people display-4 text-success mb-3 d-block"></i>
+            <h5>Team-fähig</h5>
+            <p>Rollen, Rechte, Audit-Logs</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-item text-center text-md-start">
+            <i class="bi bi-lightning-charge display-4 text-success mb-3 d-block"></i>
+            <h5>Setup in Stunden</h5>
+            <p>Keine Programmierer nötig</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h2 class="section-title mb-4">Kostenlose Automatisierungs-Demo</h2>
+          <p class="lead mb-5">
+            In 15 Minuten zeigen wir Ihnen Ihren ersten Workflow live mit Ihren Daten.
+          </p>
+          <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="mailto:tobias@indextechnologies.de" class="btn btn-primary-custom btn-lg px-5">
+              <i class="bi bi-calendar-check me-2"></i>Demo vereinbaren
+            </a>
+            <a href="index.html" class="btn btn-outline-custom btn-lg px-5">Zurück zur Startseite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER - SHARED -->
+  <footer>
+    <div class="container text-center">
+      <p>&copy; 2026 Index Technologies | <a href="mailto:tobias@indextechnologies.de">tobias@indextechnologies.de</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
