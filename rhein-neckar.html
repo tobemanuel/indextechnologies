@@ -589,31 +589,27 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<!-- CALENDLY - REEMPLAZA CONTACT -->
+<!-- CALENDLY - VERSIÓN CORREGIDA -->
 <section id="contact" class="py-5" style="background: linear-gradient(135deg, var(--neutral-900) 0%, var(--neutral-800) 50%);">
   <div class="container">
     <div class="row justify-content-center text-center">
       <div class="col-lg-10">
-        <h2 class="section-title mb-4">Termin vereinbaren - Jetzt!</h2>
-        <p class="lead mb-5">
-          Wählen Sie Ihren Wunschtermin für eine <strong>persönliche Demo in Heidelberg</strong>.<br>
-          30 Minuten. Kostenlos & unverbindlich.
-        </p>
+        <h2 class="section-title mb-4">📅 Termin vereinbaren</h2>
+        <p class="lead mb-5">30 Minuten Demo. Kostenlos & unverbindlich aus Heidelberg.</p>
         
-        <!-- CALENDLY TU URL REAL -->
-        <div class="calendly-inline-widget mb-5" 
-             data-url="https://calendly.com/tobemanuel/30min?background_color=111827&text_color=ffffff&primary_color=28a745" 
-             style="min-width:320px;height:700px;"></div>
-        
-        <div class="d-flex gap-3 flex-wrap justify-content-center">
-          <a href="mailto:tobias@indextechnologies.de?subject=Rhein-Neckar%20Demo" class="btn btn-primary-custom btn-lg px-5">
-            <i class="bi bi-envelope me-2"></i>Per E-Mail
-          </a>
-          <a href="index.html" class="btn btn-outline-custom btn-lg px-5">Zurück zur Startseite</a>
+        <!-- CALENDLY INLINE - FORMATO CORRECTO -->
+        <div class="calendly-inline-widget" 
+             data-url="https://calendly.com/tobemanuel/30min"
+             style="min-width:320px;height:650px;margin:2rem auto;">
         </div>
         
-        <div class="mt-5 pt-4 border-top" style="border-color: rgba(255,255,255,0.1);">
-          <small class="text-neutral-400">📅 Mo-Fr 9-18 Uhr | 🔒 DSGVO-sicher</small>
+        <div class="d-flex gap-3 flex-wrap justify-content-center mb-4">
+          <a href="mailto:tobias@indextechnologies.de" class="btn btn-primary-custom btn-lg px-5">
+            <i class="bi bi-envelope"></i> E-Mail
+          </a>
+          <a href="https://calendly.com/tobemanuel/30min" class="btn btn-outline-custom btn-lg px-5" target="_blank">
+            <i class="bi bi-calendar"></i> Direkt buchen
+          </a>
         </div>
       </div>
     </div>
